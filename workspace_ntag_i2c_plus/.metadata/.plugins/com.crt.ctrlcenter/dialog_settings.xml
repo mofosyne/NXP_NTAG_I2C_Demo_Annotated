@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="FlashDialog">
+		<item value="false" key="erase_pages"/>
+		<item value="false" key="program_all"/>
+		<item value="false" key="erase"/>
+		<item value="false" key="jtag"/>
+		<item value="" key="extended"/>
+		<item value="false" key="repeat"/>
+		<item value="true" key="program_pages"/>
+		<item value="true" key="erase_mass"/>
+		<item value="true" key="program"/>
+		<item value="C:\Users\nxp91080\Documents\LPCXpresso_7.9.2_493\NTAG_I2C\workspace_ntag_i2c_new\NTAG_I2C_Explorer_Demo\Release\NTAG_I2C_Explorer_Demo.axf;C:\Users\nxp91080\Documents\LPCXpresso_7.9.2_493\workspace_ntag_i2c_new\NTAG_I2C_Explorer_Demo\Release\NTAG_I2C_Explorer_Demo.axf;C:\Users\nxp91080\Documents\LPCXpresso_7.9.2_493\workspace_ntag_i2c_new\NTAG_I2C_Explorer_BootLoader\Release\NTAG_I2C_Explorer_BootLoader.axf;C:\Users\nxp91080\Documents\LPCXpresso_7.9.2_493\workspace_ntag_i2c_new\NTAG_I2C_Explorer_Demo\Debug\NTAG_I2C_Explorer_Demo.axf," key="file"/>
+		<item value="" key="base"/>
+		<item value="true" key="logFLag"/>
+		<item value="true" key="exec"/>
+		<item value="false" key="clipboard_exec"/>
+		<item value="LPC11_12_13_32K_8K.cfx," key="flashdriver"/>
+		<item value="false" key="clipboard"/>
+		<item value="," key="redlink_connect_script"/>
+		<item value="false" key="reopen"/>
+	</section>
+</section>

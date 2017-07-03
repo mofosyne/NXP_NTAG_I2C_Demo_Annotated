@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="com.crt.advproject.config.exe.debug.140449298" name="Debug">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider id="com.crt.advproject.GCCBuildCommandParser">
+				<language id="org.eclipse.cdt.core.gcc">
+					<resource project-relative-path="src/main.c">
+						<entry kind="includePath" name="/NTAG_I2C_API/src/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11u24h_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11uxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11uxx_lib/inc/usbd">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="BOARD_NTAG_I2C_EXPLORER" value=""/>
+						<entry kind="macro" name="Board_NTAG_I2C_Explorer" value=""/>
+						<entry kind="macro" name="CORE_M0" value=""/>
+						<entry kind="macro" name="HAVE_NTAG_INTERRUPT" value=""/>
+						<entry kind="macro" name="HAVE_STDBOOL_H" value=""/>
+						<entry kind="macro" name="HAVE_STDINT_H" value=""/>
+						<entry kind="macro" name="NDEBUG" value=""/>
+						<entry kind="macro" name="__CODE_RED" value=""/>
+						<entry kind="macro" name="__LPC11U37H__" value=""/>
+						<entry kind="macro" name="__MTB_BUFFER_SIZE" value="2048"/>
+						<entry kind="macro" name="__REDLIB__" value=""/>
+						<entry kind="macro" name="__USE_LPC" value=""/>
+					</resource>
+					<resource project-relative-path="src/HW_functions.c">
+						<entry kind="includePath" name="/NTAG_I2C_API/src/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11u24h_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11uxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11uxx_lib/inc/usbd">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="BOARD_NTAG_I2C_EXPLORER" value=""/>
+						<entry kind="macro" name="Board_NTAG_I2C_Explorer" value=""/>
+						<entry kind="macro" name="CORE_M0" value=""/>
+						<entry kind="macro" name="HAVE_NTAG_INTERRUPT" value=""/>
+						<entry kind="macro" name="HAVE_STDBOOL_H" value=""/>
+						<entry kind="macro" name="HAVE_STDINT_H" value=""/>
+						<entry kind="macro" name="NDEBUG" value=""/>
+						<entry kind="macro" name="__CODE_RED" value=""/>
+						<entry kind="macro" name="__LPC11U37H__" value=""/>
+						<entry kind="macro" name="__MTB_BUFFER_SIZE" value="2048"/>
+						<entry kind="macro" name="__REDLIB__" value=""/>
+						<entry kind="macro" name="__USE_LPC" value=""/>
+					</resource>
+				</language>
+			</provider>
+		</extension>
+	</configuration>
+</project>

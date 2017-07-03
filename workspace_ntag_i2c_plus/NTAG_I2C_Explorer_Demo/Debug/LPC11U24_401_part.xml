@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infoList vendor="NXP"><info name="LPC11U24_401" chip="LPC11U24_401" flash_driver="LPC11_12_13_32K_8K.cfx" match_id="0x2980002B"  stub="crt_emu_lpc11_13_nxp"><chip><name>LPC11U24_401</name>
+<family>LPC11Uxx</family>
+<vendor>NXP (formerly Philips)</vendor>
+<reset board="None" core="Real" sys="Real"/>
+<clock changeable="TRUE" freq="12MHz" is_accurate="TRUE"/>
+<memory can_program="true" id="Flash" is_ro="true" type="Flash"/>
+<memory id="RAM" type="RAM"/>
+<memory id="Periph" is_volatile="true" type="Peripheral"/>
+<memoryInstance derived_from="Flash" id="MFlash32" location="0x3000" size="0x5000"/>
+<memoryInstance derived_from="RAM" id="RamLoc8" location="0x10000200" size="0x1de0"/>
+<memoryInstance derived_from="RAM" id="RamUsb2" location="0x20004000" size="0x800"/>
+<peripheralInstance derived_from="V6M_NVIC" id="NVIC" location="0xe000e000"/>
+<peripheralInstance derived_from="V6M_DCR" id="DCR" location="0xe000edf0"/>
+<peripheralInstance derived_from="I2C" id="I2C" location="0x40000000"/>
+<peripheralInstance derived_from="WWDT" id="WWDT" location="0x40004000"/>
+<peripheralInstance derived_from="USART" id="USART" location="0x40008000"/>
+<peripheralInstance derived_from="CT16B0" id="CT16B0" location="0x4000c000"/>
+<peripheralInstance derived_from="CT16B1" id="CT16B1" location="0x40010000"/>
+<peripheralInstance derived_from="CT32B0" id="CT32B0" location="0x40014000"/>
+<peripheralInstance derived_from="CT32B1" id="CT32B1" location="0x40018000"/>
+<peripheralInstance derived_from="ADC" id="ADC" location="0x4001c000"/>
+<peripheralInstance derived_from="PMU" id="PMU" location="0x40038000"/>
+<peripheralInstance derived_from="FLASHCTRL" id="FLASHCTRL" location="0x4003c000"/>
+<peripheralInstance derived_from="SSP0" id="SSP0" location="0x40040000"/>
+<peripheralInstance derived_from="IOCON" id="IOCON" location="0x40044000"/>
+<peripheralInstance derived_from="SYSCON" id="SYSCON" location="0x40048000"/>
+<peripheralInstance derived_from="GPIO-PIN-INT" id="GPIO-PIN-INT" location="0x4004c000"/>
+<peripheralInstance derived_from="SSP1" id="SSP1" location="0x40058000"/>
+<peripheralInstance derived_from="GPIO-GROUP-INT0" id="GPIO-GROUP-INT0" location="0x4005c000"/>
+<peripheralInstance derived_from="GPIO-GROUP-INT1" id="GPIO-GROUP-INT1" location="0x40060000"/>
+<peripheralInstance derived_from="USB" id="USB" location="0x40080000"/>
+<peripheralInstance derived_from="GPIO-PORT" id="GPIO-PORT" location="0x50000000"/>
+</chip>
+<processor><name gcc_name="cortex-m0">Cortex-M0</name>
+<family>Cortex-M</family>
+</processor>
+<link href="LPC11Uxx_peripheral.xme" show="embed" type="simple"/>
+</info>
+</infoList>
+
