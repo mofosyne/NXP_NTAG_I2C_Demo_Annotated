@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+****************************************************************************
+* Copyright(c) 2014 NXP Semiconductors                                     *
+* All rights are reserved.                                                 *
+*                                                                          *
+* Software that is described herein is for illustrative purposes only.     *
+* This software is supplied "AS IS" without any warranties of any kind,    *
+* and NXP Semiconductors disclaims any and all warranties, express or      *
+* implied, including all implied warranties of merchantability,            *
+* fitness for a particular purpose and non-infringement of intellectual    *
+* property rights.  NXP Semiconductors assumes no responsibility           *
+* or liability for the use of the software, conveys no license or          *
+* rights under any patent, copyright, mask work right, or any other        *
+* intellectual property rights in or to any products. NXP Semiconductors   *
+* reserves the right to make changes in the software without notification. *
+* NXP Semiconductors also makes no representation or warranty that such    *
+* application will be suitable for the specified use without further       *
+* testing or modification.                                                 *
+*                                                                          *
+* Permission to use, copy, modify, and distribute this software and its    *
+* documentation is hereby granted, under NXP Semiconductors' relevant      *
+* copyrights in the software, without fee, provided that it is used in     *
+* conjunction with NXP Semiconductor products(UCODE I2C, NTAG I2C).        *
+* This  copyright, permission, and disclaimer notice must appear in all    *
+* copies of this code.                                                     *
+****************************************************************************
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:id="@+id/layoutReadMemoryStatistics"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/layout_background_section"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/layout_input_read_tag"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/readmemorydata_datarateCallback"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/text_back"
+            android:minLines="2"
+            android:paddingBottom="2.5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2.5dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="5dp"
+        android:background="@drawable/layout_background_screen"
+        android:layout_above="@+id/layoutReadMemoryStatistics" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageTap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:contentDescription="@string/nxp"
+                android:src="@drawable/taptag" />
+
+            <TextView
+                android:id="@+id/textTap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="@string/read_memory"
+                android:textColor="#000000"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:id="@+id/layoutPages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>  
+</RelativeLayout>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+****************************************************************************
+* Copyright(c) 2014 NXP Semiconductors                                     *
+* All rights are reserved.                                                 *
+*                                                                          *
+* Software that is described herein is for illustrative purposes only.     *
+* This software is supplied "AS IS" without any warranties of any kind,    *
+* and NXP Semiconductors disclaims any and all warranties, express or      *
+* implied, including all implied warranties of merchantability,            *
+* fitness for a particular purpose and non-infringement of intellectual    *
+* property rights.  NXP Semiconductors assumes no responsibility           *
+* or liability for the use of the software, conveys no license or          *
+* rights under any patent, copyright, mask work right, or any other        *
+* intellectual property rights in or to any products. NXP Semiconductors   *
+* reserves the right to make changes in the software without notification. *
+* NXP Semiconductors also makes no representation or warranty that such    *
+* application will be suitable for the specified use without further       *
+* testing or modification.                                                 *
+*                                                                          *
+* Permission to use, copy, modify, and distribute this software and its    *
+* documentation is hereby granted, under NXP Semiconductors' relevant      *
+* copyrights in the software, without fee, provided that it is used in     *
+* conjunction with NXP Semiconductor products(UCODE I2C, NTAG I2C).        *
+* This  copyright, permission, and disclaimer notice must appear in all    *
+* copies of this code.                                                     *
+****************************************************************************
+-->
+<resources>
+
+
+    <string name="app_name">NTAG I<sup><small>2</small></sup>C Demo</string>
+    <string name="app_version">NTAG I<sup><small>2</small></sup>C v1.7.8</string>
+    <string name="app_version_number">1.7.8</string>
+    <string name="app_version_date">February 2016</string>
+    <string name="support_email">mailto:mobileapp.support@nxp.com</string>
+    <string name="email_titel_phone_not_supported"> &quot;NTAG I<sup><small>2</small></sup>C Demo Report: setTimeout() not supported</string>
+    <string name="email_titel_feedback">NTAG I<sup><small>2</small></sup>C Demo Feedback</string>
+    <string name="action_auth">Auth</string>
+    <string name="action_flash">Flash</string>
+    <string name="action_about">About</string>
+    <string name="action_feedback">Feedback</string>
+    <string name="action_help">Learn more</string>
+    <string name="action_debug">Debug</string>
+    <string name="orange">Orange</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+    <string name="off">OFF</string>
+    
+    <string name="demo_not_supported_title"> Demo not supported </string>
+    <string name="demo_not_supported"> This demo is not supported for this NFC Device with this Tag </string>
+    <string name="tag_not_supported_title"> Invalid Tag </string>
+    <string name="tag_not_supported"> This demo is only supported by NTAG I<sup><small>2</small></sup>C Plus Tag </string>
+
+	<string name="flash_memory_app">Select from Appl.</string>
+	<string name="flash_memory_storage">Select from Storage</string>
+	<string name="flash_app_select">Select Firmware to Flash</string>
+	<string name="flash_file">Current File: </string>
+	<string name="file_default_demo">Demo App (Embedded in apk) </string>
+	<string name="file_default_blinker">LED Blinker (Embedded in apk) </string>
+	<string name="flash_hint">Keep right button pressed </string>
+    <string name="leds">DEMO</string>
+    <string name="ndefs">NDEF</string>
+    <string name="ntag_rf_text">SPEED</string>
+    <string name="settings">CONFIG</string>
+    <string name="choose">Choose color</string>
+    <string name="tap_switch_off">Tap to switch off</string>
+    <string name="tap_switch_on">Tap to switch on</string>
+    <string name="tap">Tap the tag</string>
+    <string name="error">Choose option then tap tag again.</string>
+    <string name="sendbutton">Send</string>
+    <string name="readbutton">Read</string>
+    <string name="writeTextView">Choose option</string>
+    <string name="readTextView">Ready to read</string>
+    <string name="add_aar">Add NTAG I<sup><small>2</small></sup>C Demo AAR</string>
+    <string name="enable_ndef_readLoop">Enable NDEF read loop</string>
+    <string name="send_text">SRAM Speed</string>
+    <string name="SRam_char_multipl">Enter char multiplier</string>
+    <string name="MemorySwitch">Memory:</string>
+    <string name="rf_send">Send</string>
+    <string name="scroll">Display NDEF message on LCD</string>
+    <string name="lcd">Enable LCD</string>
+    <string name="temperature">Enable Temperature Sensor</string>
+    <string name="Ndef_char_multipl">Enter text multiplier</string>
+    <string name="Block_multipl">Data length: </string>
+    <string name="Block_multipl_sram"> x 64 bytes</string>
+    <string name="Block_multipl_eeprom"> Bytes</string>
+    <string name="Block_multipl_eeprom_overhead"> (overhead) Bytes</string>
+    <string name="nxp">NXP</string>
+    <string name="send">send</string>
+    <string name="send_hint">Enter text here</string>
+    <string name="textCallbackMessage">Message:</string>
+    <string name="textCallbackResponse">Response:</string>
+    <string name="text_on">ON</string>
+    <string name="text_off">OFF</string>
+    <string name="title_activity_read_config">ReadConfig</string>
+    <string name="title_activity_config">NTAG I<sup><small>2</small></sup>C Configuration</string>
+    <string name="ic_header">GENERAL CHIP INFORMATION</string>
+    <string name="ic_manu">IC manufacturer is:</string>
+    <string name="ic_prod">IC Product:</string>
+    <string name="ic_prod_ntagi2c_1k">NXP NTAG I<sup><small>2</small></sup>C 1K</string>
+    <string name="ic_prod_ntagi2c_2k">NXP NTAG I<sup><small>2</small></sup>C 2K</string>
+    <string name="ic_prod_ntagi2c_1k_Plus">NXP NTAG I<sup><small>2</small></sup>C 1K Plus</string>
+    <string name="ic_prod_ntagi2c_2k_Plus">NXP NTAG I<sup><small>2</small></sup>C 2K Plus</string>
+    <string name="ic_prod_tnpi_6230">NXP TNPI 6230</string>
+    <string name="ic_prod_tnpi_3230">NXP TNPI_3230</string>
+    <string name="ic_manu_nxp">NXP"</string>
+    <string name="ic_manu_not_nxp">Not NXP</string>
+    <string name="ndef_mem_size">User memory:</string>
+    <string name="I2C_RST">I<sup><small>2</small></sup>C RST on start is:</string>
+    <string name="FD_OFF_ON_11">11b</string>
+    <string name="FD_OFF_ON_10">10b</string>
+    <string name="FD_OFF_ON_01">01b</string>
+    <string name="FD_OFF_ON_00">00b</string>
+    <string name="LAST_NDEF_Block">Last NDEF Block is:</string>
+    <string name="NDEF_DATA_READ">NDEF Data Read is:</string>
+    <string name="RF_Field">RF field present is:</string>
+    <string name="I2CLock">I<sup><small>2</small></sup>C locked is:</string>
+    <string name="RFLock">RF locked is:</string>
+    <string name="SRAM_I2C_READY">SRAM I<sup><small>2</small></sup>C ready is:</string>
+    <string name="SRAM_RF_READY">SRAM RF ready is:</string>
+    <string name="PTHRU_DIR_RF_I2C">From RF to I<sup><small>2</small></sup>C is:</string>
+    <string name="SM_Reg">SRAM Mirror is:</string>
+    <string name="WD_LS_Timer">WD_LS Timer is:</string>
+    <string name="WD_MS_Timer">WD_MS Timer is:</string>
+    <string name="Plus_header">ACCESS CONFIGURATION</string>
+    <string name="Plus_Auth0">Auth0 is:</string>
+    <string name="Plus_NFC_Prot">NFC Prot is:</string>
+    <string name="Plus_NFC_DIS_SEC1">NFC DIS SEC1 is:</string>
+    <string name="Plus_AUTHLIM">Auth LIM is:</string>
+    <string name="Plus_2K_Prot">2K Prot is:</string>
+    <string name="Plus_SRAM_Prot">SRAM Prot is:</string>
+    <string name="Plus_I2C_Prot">I<sup><small>2</small></sup>C Prot is:</string>
+    <string name="title_activity_write_config">WriteConfig</string>
+    <string name="readConf">Tap tag to read board status</string>
+    <string name="initSpeedMsg">Tap tag to evaluate performance</string>
+    <string name="transferdirection">Transfer: non</string>
+    <string name="readConfDone">read configuration successfully done\n\r</string>
+    <string name="readNdefMsg">Tap tag to read NDEF content</string>
+    <string name="writeConf">Tap tag to write configuration.\n\r</string>
+    <string name="writeNdefMsg">Tap tag to write NDEF content</string>
+    <string name="Button1">1</string>
+    <string name="Button2">2</string>
+    <string name="Button3">3</string>
+    <string name="Tag_lost">Error: Tag lost, try again</string>
+    <string name="format_error">Error: Input data format invalid</string>
+    <string name="No_NDEF">"NTAG I<sup><small>2</small></sup>C product is not NDEF formatted"</string>
+    <string name="General_Chip_Information">General Chip Information</string>
+    <string name="NTAG_Configuration">NTAG Configuration<String></String></string>
+    <string name="FD_header">FIELD DETECTION</string>
+    <string name="ver_header">VERSION INFORMATION</string>
+    <string name="ver_board">Board Version: </string>
+    <string name="ver_FW">Board FW Version: </string>
+    <string name="ver_App">App Version: </string>
+    <string name="config_read">Read tag memory </string>
+    <string name="config_reset">Reset tag</string>
+    <string name="config_session">Read Session Registers </string>
+    <string name="config_config">Read/Write Config Registers </string>
+    <string name="rf_memoryOptions_sram">SRAM  </string>
+    <string name="rf_memoryOptions_eeprom">EEPROM</string>
+    <string name="rf_readOptions_fast_mode">Fast Mode</string>
+    <string name="rf_readOptions_polling_mode">Polling Mode</string>
+    <string name="layout_output">Board configuration</string>
+    <string name="layout_input_led">Board status</string>
+    <string name="layout_input_speedtest">Performance</string>
+    <string name="layout_input_ndef_read">Read performance</string>
+    <string name="layout_input_ndef_write">Write performance</string>
+    <string name="statistics">Statistics</string>
+    <string name="layout_input_reset_tag">Reset performance</string>
+    <string name="layout_input_read_tag">Read performance</string>
+    <string name="read_memory">Tap tag to read content</string>
+    <string name="read_sregs">Tap tag to read session registers</string>
+    <string name="read_cregs">Tap tag to read configuration registers</string>
+    <string name="reset_memory">Tap tag to reset its content</string>
+    <string name="read_ver">Tap tag to get the Board Version Information</string>
+    <string name="read_debug">Tap tag to get debug Information</string>
+    <string name="debug_info_header">FUNCTIONS</string>
+    <string name="debug_transceive">Transceive (1 Byte): </string>
+    <string name="debug_transceive_2Byte">Transceive (2 Byte): </string>
+    <string name="Auto_SS_read">Automatic Sector Select read: </string>
+    <string name="Auto_SS_write">Automatic Sector Select write: </string>
+    <string name="Mfu_read_0">Mfu Read Page 0: </string>
+    <string name="Mfu_read_128">Mfu Read Page 128: </string>
+    <string name="Timeout_header">TIMEOUT</string>
+    <string name="default_timeout">Default Timeout:</string>
+    <string name="Set_Timeout_1ms">Set Timeout to 1ms: </string>
+    <string name="Set_Timeout_20ms">Set Timeout to 20ms: </string>
+    <string name="Set_Timeout_500ms">Set Timeout to 500ms: </string>
+    <string name="section_timeout_1ms">1MS TIMEOUT</string>
+    <string name="section_timeout_20ms">20MS TIMEOUT</string>
+    <string name="section_timeout_500ms">500MS TIMEOUT</string>
+    <string name="set_timeout">Transcive result</string>
+    <string name="get_timeout">Getting timeout </string>
+    <string name="measured_timeout">Measured timeout </string>
+    <string name="ndef_type">NDEF Msg Type: </string>
+    <string name="radio_text">Text</string>
+    <string name="radio_uri">URI</string>
+    <string name="radio_btpair">BT</string>
+    <string name="radio_sp">SP</string>
+    <string name="ndef_default_text">NTAG I<sup><small>2</small></sup>C EXPLORER</string>
+    <string name="ndef_default_uri">http://www.nxp.com/demoboard/OM5569</string>
+    <string name="FD_OFF">FD_OFF is:</string>
+    <string name="FD_ON">FD_ON is:</string>
+    <string name="Last_NDEF_Page_is">Last NDEF Page is:</string>
+    <string name="PT_header">PASS THROUGH</string>
+    <string name="Pass_Through">Pass Through is:</string>
+    <string name="PTHRU_ON_OFF">Functionality is:</string>
+    <string name="PTHRU_DIR">Direction:</string>
+    <string name="WRITE_ACCESS">Write from RF is:</string>
+    <string name="PT_I2C_RF">I<sup><small>2</small></sup>C to RF</string>
+    <string name="PT_RF_I2C">RF to I<sup><small>2</small></sup>C</string>
+    <string name="SRam_header">SRAM MEMORY SETTINGS</string>
+    <string name="ntag_header">NTAG CONFIGURATION</string>
+    <string name="FD_OFF00">00b - Field switched off</string>
+    <string name="FD_OFF01">01b - Set to HALT or field switched off </string>
+    <string name="FD_OFF10">10b - LAST_NDEF_PAGE read or field switched off </string>
+    <string name="FD_OFF11">11b - Data is read/written by I<sup><small>2</small></sup>C or field switched off  </string>
+    <string name="FD_ON00">00b - field switched on</string>
+    <string name="FD_ON01">01b - first valid Start-of-Frame</string>
+    <string name="FD_ON10">10b - selection of Tag</string>
+    <string name="FD_ON11">11b - data is ready to read from I<sup><small>2</small></sup>C / data is read by RF</string>
+    <string name="SRAM_MIRROR_ON_OFF">SRAM Mirror is: </string>
+    <string name="SRAM_MIRROR_PAGE_Text">SRAM Mirror block is:</string>
+    <string name="I2C_header">I<sup><small>2</small></sup>C SETTINGS</string>
+    <string name="I2C_CLOCK_STR">I<sup><small>2</small></sup>C Clock stretch is:</string>
+    <string name="Write_Config">Write Config</string>
+    <string name="Read_Config">Read Config</string>
+    <string name="Write_NDEF">Write NDEF</string>
+    <string name="Read_NDEF">Read NDEF</string>
+    <string name="Start_Speedtest">Start</string>
+    <string name="I2C_CLOCK_STR_ON">I<sup><small>2</small></sup>C Clock stretching is: ON</string>
+    <string name="I2C_CLOCK_STR_OFF">I<sup><small>2</small></sup>C Clock stretching is: OFF</string>
+    <string name="ResetType_RF">Memory Reset (RF)</string>
+    <string name="ResetType_I2C">Full Reset (I<sup><small>2</small></sup>C, Demoboard needed)</string>
+    
+    <string name="Select_Password">Select Password</string>
+    <string name="Password_1">SUN</string>
+    <string name="Password_2">STAR</string>
+    <string name="Password_3">MOON</string>
+    <string name="Auth_Status">Current Authentication status</string>
+    <string name="Auth_disabled">Disabled</string>
+    <string name="Auth_protected">Protected</string>
+    <string name="Auth_unprotected">Unprotected</string>
+    <string name="Auth_authenticated">Authenticated</string>
+    <string name="Dialog_disable_auth_title"> Disable Protection</string>
+    <string name="Dialog_disable_auth_msg"> Are you sure to disable protection? </string>
+    
+    <string name="note_pwdandpacknotaccessible">* PWD and PACK not accessible</string>
+    <string name="Dialog_enable_auth_title"> Enable Protection</string>
+    <string name="Dialog_enable_auth_msg"> Are you sure to enable protection?</string>
+    
+    <string-array name="ResetType_Options">
+        <item>@string/ResetType_RF</item>
+        <item>@string/ResetType_I2C</item>
+    </string-array>
+    <string-array name="FD_OFF_Options">
+        <item>@string/FD_OFF00</item>
+        <item>@string/FD_OFF01</item>
+        <item>@string/FD_OFF10</item>
+        <item>@string/FD_OFF11</item>
+    </string-array>
+    <string-array name="FD_ON_Options">
+        <item>@string/FD_ON00</item>
+        <item>@string/FD_ON01</item>
+        <item>@string/FD_ON10</item>
+        <item>@string/FD_ON11</item>
+    </string-array>
+
+</resources>

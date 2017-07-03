@@ -1,0 +1,114 @@
+<html>
+<!--
+****************************************************************************
+* Copyright(c) 2014 NXP Semiconductors                                     *
+* All rights are reserved.                                                 *
+*                                                                          *
+* Software that is described herein is for illustrative purposes only.     *
+* This software is supplied "AS IS" without any warranties of any kind,    *
+* and NXP Semiconductors disclaims any and all warranties, express or      *
+* implied, including all implied warranties of merchantability,            *
+* fitness for a particular purpose and non-infringement of intellectual    *
+* property rights.  NXP Semiconductors assumes no responsibility           *
+* or liability for the use of the software, conveys no license or          *
+* rights under any patent, copyright, mask work right, or any other        *
+* intellectual property rights in or to any products. NXP Semiconductors   *
+* reserves the right to make changes in the software without notification. *
+* NXP Semiconductors also makes no representation or warranty that such    *
+* application will be suitable for the specified use without further       *
+* testing or modification.                                                 *
+*                                                                          *
+* Permission to use, copy, modify, and distribute this software and its    *
+* documentation is hereby granted, under NXP Semiconductors' relevant      *
+* copyrights in the software, without fee, provided that it is used in     *
+* conjunction with NXP Semiconductor products(UCODE I2C, NTAG I2C).        *
+* This  copyright, permission, and disclaimer notice must appear in all    *
+* copies of this code.                                                     *
+****************************************************************************
+-->
+<head> 
+<script type="text/javascript">
+
+function setUID_SAK_ATQA(UID, SAK, ATQA){
+	document.getElementById("uidvalue").innerHTML = UID;
+	document.getElementById("sakvalue").innerHTML = SAK;
+	document.getElementById("atqavalue").innerHTML = ATQA;
+}
+
+function setModel_Version(Model, Version){
+	document.getElementById("modelvalue").innerHTML = Model;
+	document.getElementById("versionvalue").innerHTML = Version;
+}
+
+
+function initTest(test_name){
+	var table = document.getElementById("TestLog");
+	var row = table.insertRow(-1);
+	row.id = test_name;
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	
+	// Add some text to the new cells:
+	cell1.innerHTML = "<b>" + test_name + "</b>";
+	cell2.innerHTML = "testing...";
+}
+
+function okTest(test_name, details){
+	var table = document.getElementById("TestLog");
+	var row = document.getElementById(test_name);	
+	row.cells[1].innerHTML = ("&#x2714" + " OK").fontcolor("green");
+	var row2 = table.insertRow(-1);
+	var cell3 = row2.insertCell(0);
+	cell3.innerHTML = details;
+	cell3.colSpan = "2";	
+	cell3.style.textAlign="right";
+}
+
+function warningTest(test_name, warning){
+	var table = document.getElementById("TestLog");
+	var row = document.getElementById(test_name);	
+	row.cells[1].innerHTML = ("&#x26a0;" + " WARNING").fontcolor("orange");
+	var row2 = table.insertRow(-1);
+	var cell3 = row2.insertCell(0);
+	cell3.innerHTML = warning;
+	cell3.colSpan = "2";
+	cell3.style.textAlign="right";
+}
+
+function errorTest(test_name, error){
+	var table = document.getElementById("TestLog");
+	var row = document.getElementById(test_name);	
+	row.cells[1].innerHTML = ("&#10007;" + "  ERROR").fontcolor("red");
+	var row2 = table.insertRow(-1);
+	var cell3 = row2.insertCell(0);
+	cell3.innerHTML = error;
+	cell3.colSpan = "2";
+	cell3.style.textAlign="right";
+}
+
+function sendLog()
+{
+	JSInterface.sendLog('<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');
+}
+
+</script>
+</head>
+<body>
+<h1> Tag info </h1>
+<table border="2" rules="all" width = "100%"> 
+<tr> <td> <b>UID</b></td> <td id="uidvalue"> </td></tr> 
+<tr> <td> <b>SAK</b></td> <td id="sakvalue"> </td></tr> 
+<tr> <td> <b>ATQA</b></td> <td id="atqavalue"> </td></tr> 
+</table>
+<h1> Phone info </h1>
+<table border="2" rules="all" width = "100%"> 
+<tr> <td> <b>Model</b></td> <td id="modelvalue"> </td></tr> 
+<tr> <td> <b>Version</b></td> <td id="versionvalue"> </td></tr> 
+</table>
+
+<h1> Test result </h1>
+<table id="TestLog" border="2" rules="all" width = "100%"> 
+<tr> <td> <b>Test Name </b></td> <td> <b> Result </b> </td></tr> <table>
+<Button onclick="sendLog()"> Share Test results </Button>
+</body>
+</html>

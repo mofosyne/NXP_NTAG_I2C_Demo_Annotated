@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="private" additionalparam="-bootclasspath &quot;D:\Privat\adt-bundle-windows-x86_64-20130522\sdk\platforms\android-17\android.jar&quot; " author="true" classpath="../ActionBarSherlock/libs/android-support-v4.jar;../ActionBarSherlock/bin/actionbarsherlock.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" source="1.6" sourcefiles="src/com/nxp/nfc_demo/MainActivity.java" sourcepath="src;gen" splitindex="true" use="true" version="true">
+            <link href="http://developer.android.com/reference/"/>
+        </javadoc>
+    </target>
+</project>
