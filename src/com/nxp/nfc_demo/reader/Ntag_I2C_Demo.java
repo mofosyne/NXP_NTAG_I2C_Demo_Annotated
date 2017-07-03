@@ -1432,11 +1432,14 @@ public class Ntag_I2C_Demo implements WriteEEPROMListener, WriteSRAMListener {
             {   // For each flash sector we are trying to write into
 				int flash_addr = 0x4000 + i * sectorSize;
 				int flash_length = 0;
-				
+
+				/* Refresh the flashData variable with new firmware block as required
+				****************************************************************************/
+
 				if (length - (i + 1) * sectorSize < 0)
                 {   //  Still more bytes to flash
 					flash_length = roundUp(length % sectorSize);
-					flashData = new byte[flash_length];
+					flashData = new byte[flash_length];	// New Allocation
 					Arrays.fill(flashData, (byte) 0);   // Blank out flashData byte array
 
                     // Copy to flashData the next chunk of the firmware
@@ -1445,37 +1448,71 @@ public class Ntag_I2C_Demo implements WriteEEPROMListener, WriteSRAMListener {
                 else
                 {   // Just bank out flash data, since we are done
 					flash_length = sectorSize;
-					flashData = new byte[flash_length];
+					flashData = new byte[flash_length];	// New Allocation
 					System.arraycopy(bytesToFlash, i * sectorSize, flashData, 0, sectorSize);
 				}
 				
+
+				/* Send Information About The Next Sector to Send : Data Byte Array
+				****************************************************************************/
+
+				// 	Allocate a new Byte Array. With the same size as the NTAG's SRAM.
 				data = new byte[reader.getSRAMSize()];
+
+				/*
+					* Index is in reference to end of SRAM memory sector
+					|	index: 	|	12 	11 	10 	9  	|	 8 	7 	6 	5 	|  4  |	 3 	| 2 1 0 |
+					|-----------|-------------------|-------------------|-----|-----|-------|
+					|	data: 	|	[ FLASH ADDR ] 	|	 [ FLASH LEN ] 	| 'F' |	'P' |       |
+
+					DATA FLASH BLOCK TO SEND OVER
+					0<---													End ---->|
+					[ .................. ][ FLASH ADDR ][ FLASH LEN ][ F ][ P ][ ... ]
+				*/
+
+				// Magic Number?
 				data[reader.getSRAMSize() - 4] = 'F';
 				data[reader.getSRAMSize() - 3] = 'P';
 				
+				// Flash Length
 				data[reader.getSRAMSize() - 8] = (byte) (flash_length >> 24 & 0xFF);
 				data[reader.getSRAMSize() - 7] = (byte) (flash_length >> 16 & 0xFF);
 				data[reader.getSRAMSize() - 6] = (byte) (flash_length >> 8 & 0xFF);
 				data[reader.getSRAMSize() - 5] = (byte) (flash_length & 0xFF);
 
+				// Flash Address
 				data[reader.getSRAMSize() - 12] = (byte) (flash_addr >> 24 & 0xFF);
 				data[reader.getSRAMSize() - 11] = (byte) (flash_addr >> 16 & 0xFF);
 				data[reader.getSRAMSize() - 10] = (byte) (flash_addr >> 8 & 0xFF);
-				data[reader.getSRAMSize() - 9] = (byte) (flash_addr & 0xFF);
+				data[reader.getSRAMSize() -  9] = (byte) (flash_addr & 0xFF);
 				
+				// Writing data block
 				Log.d("FLASH", "Flashing to start");
 				reader.writeSRAMBlock(data, null);
 				Log.d("FLASH", "Start Block write " + (i + 1) + " out of " + flashes);
 				
+				// ms sleep to allow for microcontroller to read the tag
 				reader.waitforI2Cread(100);
-				
+
+				/* Sending Next Firmware Payload Block : flashData
+				****************************************************************************/
+
 				Log.d("FLASH", "Starting Block writing");
 				reader.writeSRAM(flashData, R_W_Methods.Fast_Mode, this);
 				Log.d("FLASH", "All Blocks written");
 				
+				// Give time for tag to flash the sector
 				reader.waitforI2Cwrite(500);
 				Thread.sleep(500);
 				
+				/* Confirming Successful Write of a Flash Sector
+				****************************************************************************/
+
+				/*
+					| ... |	4	|	3	|	2	|	1	|	0	|
+					| ... |	A	|	C	|	K	| 	-	|	-	|
+				*/
+
 				Log.d("FLASH", "Wait finished");
 				byte[] response = reader.readSRAMBlock();
 				Log.d("FLASH", "Block read");
@@ -1488,10 +1525,10 @@ public class Ntag_I2C_Demo implements WriteEEPROMListener, WriteSRAMListener {
 						response[reader.getSRAMSize() - 2] != 'K'
 					)
 				{
-					Log.d("FLASH", "was nak");
+					Log.d("FLASH", "was nak (flashes:" + i + ")");
 					return false;
 				}
-				Log.d("FLASH", "was ack");
+				Log.d("FLASH", "was ack (flashes:" + i + ")");
 			}
 			Log.d("FLASH", "Flash completed");
 			
