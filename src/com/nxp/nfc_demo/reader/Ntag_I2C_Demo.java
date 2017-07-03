@@ -1396,6 +1396,18 @@ public class Ntag_I2C_Demo implements WriteEEPROMListener, WriteSRAMListener {
 		}
 	}
 	
+	// https://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java
+	private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
+	public static String bytesToHex(byte[] bytes) {
+	    char[] hexChars = new char[bytes.length * 2];
+	    for ( int j = 0; j < bytes.length; j++ ) {
+	        int v = bytes[j] & 0xFF;
+	        hexChars[j * 2] = hexArray[v >>> 4];
+	        hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+	    }
+	    return new String(hexChars);
+	}
+
 	/**
 	 * Performs the flashing of a new bin file from the NFC Device.
 	 *
@@ -1428,6 +1440,7 @@ public class Ntag_I2C_Demo implements WriteEEPROMListener, WriteSRAMListener {
 			// Set the number of writings
 			FlashMemoryActivity.setFLashDialogMax(blocks);
 			
+			// START OF SECTOR FLASHING LOOP
 			for (int i = 0; i < flashes; i++)
             {   // For each flash sector we are trying to write into
 				int flash_addr = 0x4000 + i * sectorSize;
@@ -1470,7 +1483,7 @@ public class Ntag_I2C_Demo implements WriteEEPROMListener, WriteSRAMListener {
 					[ .................. ][ FLASH ADDR ][ FLASH LEN ][ F ][ P ][ ... ]
 				*/
 
-				// Magic Number?
+				// Magic Number? (Flash Programming Mode?)
 				data[reader.getSRAMSize() - 4] = 'F';
 				data[reader.getSRAMSize() - 3] = 'P';
 				
@@ -1489,16 +1502,18 @@ public class Ntag_I2C_Demo implements WriteEEPROMListener, WriteSRAMListener {
 				// Writing data block
 				Log.d("FLASH", "Flashing to start");
 				reader.writeSRAMBlock(data, null);
+				Log.d("FLASH", "Tx (flash addr & length): "+bytesToHex(data));
 				Log.d("FLASH", "Start Block write " + (i + 1) + " out of " + flashes);
 				
 				// ms sleep to allow for microcontroller to read the tag
-				reader.waitforI2Cread(100);
+				reader.waitforI2Cread(200);
 
 				/* Sending Next Firmware Payload Block : flashData
 				****************************************************************************/
 
 				Log.d("FLASH", "Starting Block writing");
 				reader.writeSRAM(flashData, R_W_Methods.Fast_Mode, this);
+				Log.d("FLASH", "Tx: "+bytesToHex(flashData));
 				Log.d("FLASH", "All Blocks written");
 				
 				// Give time for tag to flash the sector
@@ -1515,6 +1530,7 @@ public class Ntag_I2C_Demo implements WriteEEPROMListener, WriteSRAMListener {
 
 				Log.d("FLASH", "Wait finished");
 				byte[] response = reader.readSRAMBlock();
+				Log.d("FLASH", "Rx: "+bytesToHex(response));
 				Log.d("FLASH", "Block read");
 				
 				if (
@@ -1530,8 +1546,12 @@ public class Ntag_I2C_Demo implements WriteEEPROMListener, WriteSRAMListener {
 				}
 				Log.d("FLASH", "was ack (flashes:" + i + ")");
 			}
+			// END OF SECTOR FLASHING LOOP
+
 			Log.d("FLASH", "Flash completed");
 			
+			// Maybe this indicates that its ready to start this new firmware?
+			// (e.g. Flash Start/Set?)
 			data = new byte[reader.getSRAMSize()];
 			data[reader.getSRAMSize() - 4] = 'F';
 			data[reader.getSRAMSize() - 3] = 'S';
@@ -1553,6 +1573,7 @@ public class Ntag_I2C_Demo implements WriteEEPROMListener, WriteSRAMListener {
 		}
 		Log.d("FLASH", "Flash returned");
 		
+		// Flash Finished? Maybe it tells the MCU to reset.
 		data = new byte[reader.getSRAMSize()];
 		data[reader.getSRAMSize() - 4] = 'F';
 		data[reader.getSRAMSize() - 3] = 'F';
